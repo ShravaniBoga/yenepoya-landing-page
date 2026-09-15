@@ -1,126 +1,260 @@
+/* HeroIntro.css */
+
 .hero-intro {
   position: relative;
-  padding-top: 62px;
-  padding-bottom: 46px;
+
+  padding-top: 42px;
+  padding-bottom: 67px;
 }
 
 .hero-intro__inner {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
   text-align: center;
-  position: relative;
 }
+
+/* ================================
+   LEFT DECORATIVE LINE — horizontal part
+   ================================ */
 
 .hero-intro__accent {
   position: absolute;
-  top: 92px;
+
   height: 1px;
+
+  pointer-events: none;
 }
 
 .hero-intro__accent--left {
-  left: 24px;
-  width: 210px;
+  left: max(40px, calc((100vw - 1405px) / 2 + 105px));
+  top: 44px;
+
+  width: 300px;
+
   background: var(--color-line);
 }
 
-.hero-intro__accent--left::after {
-  content: "";
+/* ================================
+   LEFT DECORATIVE LINE — vertical part
+   (separate element, NOT a pseudo of the horizontal line anymore, so it
+   can stretch independently to the bottom edge of .hero-intro)
+   ================================ */
+
+.hero-intro__accent-vert {
   position: absolute;
-  left: 0;
-  top: 0;
+
   width: 1px;
-  height: 300px;
+
   background: var(--color-line);
+
+  pointer-events: none;
 }
+
+.hero-intro__accent-vert--left {
+  left: max(40px, calc((100vw - 1405px) / 2 + 105px));
+  top: 44px;
+  bottom: 0; /* stops exactly at the top of HeroStrip — no fixed height guessing */
+}
+
+/* ================================
+   RIGHT PINK LINE
+   ================================ */
 
 .hero-intro__accent--right {
   right: 0;
-  width: 220px;
+  top: 46px;
+
+  width: 510px;
+
   background: var(--color-line-soft);
 }
 
+/* ================================
+   TEXT
+   ================================ */
+
 .hero-intro__text h1 {
+  margin-bottom: 20px;
+
   font-size: 2.85rem;
-  margin-bottom: 16px;
 }
 
 .hero-intro__text p {
-  max-width: 620px;
+  max-width: 760px;
+
   margin: 0 auto;
+
   font-size: 1rem;
 }
 
+/* ================================
+   SOCIAL ICONS
+   ================================ */
+
 .hero-intro__social {
   position: absolute;
+
   right: 24px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 132px;
+
   display: flex;
+  align-items: center;
+
   gap: 16px;
 }
 
 .hero-intro__social a {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   color: var(--color-text-dark);
-  background: var(--color-blue-soft);
+  background: transparent;
+
   transition:
     background 0.2s ease,
     color 0.2s ease;
 }
 
 .hero-intro__social a:hover {
-  background: var(--color-text-dark);
-  color: var(--color-white);
+  color: var(--color-text-dark);
+  background: transparent;
 }
+
+.hero-intro__social svg {
+  display: block;
+
+  width: 14px;
+  height: 14px;
+}
+
+/* ==================================================
+   LARGE DESKTOP
+   ================================================== */
+
+@media (min-width: 1400px) {
+  .hero-intro {
+    padding-top: 42px;
+    padding-bottom: 67px;
+  }
+
+  .hero-intro__accent--left,
+  .hero-intro__accent-vert--left {
+    left: 209px;
+  }
+
+  .hero-intro__accent--left {
+    top: 44px;
+    width: 300px;
+  }
+
+  .hero-intro__accent-vert--left {
+    top: 44px;
+  }
+
+  .hero-intro__accent--right {
+    top: 46px;
+    width: 510px;
+  }
+
+  .hero-intro__social {
+    right: 38px;
+    top: 132px;
+  }
+}
+
+/* ==================================================
+   LAPTOP
+   ================================================== */
+
+@media (max-width: 1200px) {
+  .hero-intro__accent--left,
+  .hero-intro__accent-vert--left {
+    left: 100px;
+  }
+
+  .hero-intro__accent--left {
+    width: 250px;
+  }
+
+  .hero-intro__accent--right {
+    width: 330px;
+  }
+
+  .hero-intro__social {
+    right: 30px;
+  }
+}
+
+/* ==================================================
+   TABLET
+   ================================================== */
 
 @media (max-width: 900px) {
   .hero-intro {
-    padding-top: 44px;
-    padding-bottom: 40px;
+    padding-top: 38px;
+    padding-bottom: 50px;
   }
 
   .hero-intro__text h1 {
     font-size: 2.3rem;
   }
 
-  .hero-intro__accent {
-    top: 72px;
+  .hero-intro__accent--left,
+  .hero-intro__accent-vert--left {
+    left: 40px;
   }
 
   .hero-intro__accent--left {
-    width: 130px;
+    top: 42px;
+    width: 150px;
   }
 
-  .hero-intro__accent--left::after {
-    height: 220px;
+  .hero-intro__accent-vert--left {
+    top: 42px;
   }
 
   .hero-intro__accent--right {
-    width: 140px;
+    top: 43px;
+    width: 190px;
   }
 
   .hero-intro__social {
-    position: static;
-    transform: none;
-    justify-content: center;
-    margin-top: 20px;
+    right: 20px;
+    top: 112px;
+
+    gap: 14px;
   }
 }
 
+/* ==================================================
+   MOBILE
+   ================================================== */
+
 @media (max-width: 700px) {
   .hero-intro {
-    padding-top: 36px;
-    padding-bottom: 32px;
+    padding-top: 32px;
+    padding-bottom: 28px;
   }
 
-  .hero-intro__accent {
+  /*
+   Desktop decorative lines are intentionally removed.
+   They would cross the content on mobile.
+  */
+  .hero-intro__accent,
+  .hero-intro__accent-vert {
     display: none;
+  }
+
+  .hero-intro__text {
+    width: 100%;
   }
 
   .hero-intro__text h1 {
@@ -129,13 +263,41 @@
   }
 
   .hero-intro__text p {
+    max-width: 600px;
+
     font-size: 0.9rem;
   }
 
   .hero-intro__social {
     position: static;
-    transform: none;
+
+    margin-top: 17px;
+
     justify-content: center;
-    margin-top: 18px;
+
+    gap: 16px;
+  }
+}
+
+/* ==================================================
+   SMALL MOBILE
+   ================================================== */
+
+@media (max-width: 420px) {
+  .hero-intro {
+    padding-top: 28px;
+    padding-bottom: 24px;
+  }
+
+  .hero-intro__text h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero-intro__text p {
+    font-size: 0.9rem;
+  }
+
+  .hero-intro__social {
+    margin-top: 15px;
   }
 }

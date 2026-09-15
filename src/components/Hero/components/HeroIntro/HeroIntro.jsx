@@ -1,3 +1,4 @@
+// HeroIntro.jsx
 import "./HeroIntro.css";
 
 const SOCIAL_ICONS = [
@@ -18,8 +19,17 @@ const SOCIAL_ICONS = [
 function HeroIntro() {
   return (
     <div className="hero-intro">
+      {/* horizontal top line */}
       <span
         className="hero-intro__accent hero-intro__accent--left"
+        aria-hidden="true"
+      />
+
+      {/* vertical line — stretches from top:44px down to the bottom edge of
+          .hero-intro (i.e. exactly where HeroStrip begins). Never crosses
+          into the image strip. */}
+      <span
+        className="hero-intro__accent-vert hero-intro__accent-vert--left"
         aria-hidden="true"
       />
 
@@ -45,7 +55,8 @@ function HeroIntro() {
                 viewBox="0 0 24 24"
                 width="18"
                 height="18"
-                fill="currentColor">
+                fill="currentColor"
+                aria-hidden="true">
                 <path d={icon.path} />
               </svg>
             </a>
