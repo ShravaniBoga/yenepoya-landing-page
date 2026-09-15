@@ -1,4 +1,6 @@
-/* HeroIntro.css */
+/* ==================================================
+   HERO INTRO
+   ================================================== */
 
 .hero-intro {
   position: relative;
@@ -17,9 +19,9 @@
   text-align: center;
 }
 
-/* ================================
-   LEFT DECORATIVE LINE — horizontal part
-   ================================ */
+/* ==================================================
+   DECORATIVE LINES
+   ================================================== */
 
 .hero-intro__accent {
   position: absolute;
@@ -38,12 +40,6 @@
   background: var(--color-line);
 }
 
-/* ================================
-   LEFT DECORATIVE LINE — vertical part
-   (separate element, NOT a pseudo of the horizontal line anymore, so it
-   can stretch independently to the bottom edge of .hero-intro)
-   ================================ */
-
 .hero-intro__accent-vert {
   position: absolute;
 
@@ -57,12 +53,12 @@
 .hero-intro__accent-vert--left {
   left: max(40px, calc((100vw - 1405px) / 2 + 105px));
   top: 44px;
-  bottom: 0; /* stops exactly at the top of HeroStrip — no fixed height guessing */
+  bottom: 0;
 }
 
-/* ================================
-   RIGHT PINK LINE
-   ================================ */
+/* ==================================================
+   RIGHT LINE
+   ================================================== */
 
 .hero-intro__accent--right {
   right: 0;
@@ -73,13 +69,13 @@
   background: var(--color-line-soft);
 }
 
-/* ================================
+/* ==================================================
    TEXT
-   ================================ */
+   TYPOGRAPHY — KEEP EXACTLY AS ORIGINAL
+   ================================================== */
 
 .hero-intro__text h1 {
   margin-bottom: 20px;
-
   font-size: 2.85rem;
 }
 
@@ -91,9 +87,9 @@
   font-size: 1rem;
 }
 
-/* ================================
-   SOCIAL ICONS
-   ================================ */
+/* ==================================================
+   SOCIAL
+   ================================================== */
 
 .hero-intro__social {
   position: absolute;
@@ -140,33 +136,21 @@
    ================================================== */
 
 @media (min-width: 1400px) {
-  .hero-intro {
-    padding-top: 42px;
-    padding-bottom: 67px;
-  }
-
   .hero-intro__accent--left,
   .hero-intro__accent-vert--left {
     left: 209px;
   }
 
   .hero-intro__accent--left {
-    top: 44px;
     width: 300px;
   }
 
-  .hero-intro__accent-vert--left {
-    top: 44px;
-  }
-
   .hero-intro__accent--right {
-    top: 46px;
     width: 510px;
   }
 
   .hero-intro__social {
     right: 38px;
-    top: 132px;
   }
 }
 
@@ -174,7 +158,7 @@
    LAPTOP
    ================================================== */
 
-@media (max-width: 1200px) {
+@media (max-width: 1200px) and (min-width: 901px) {
   .hero-intro__accent--left,
   .hero-intro__accent-vert--left {
     left: 100px;
@@ -197,14 +181,10 @@
    TABLET
    ================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 900px) and (min-width: 701px) {
   .hero-intro {
     padding-top: 38px;
     padding-bottom: 50px;
-  }
-
-  .hero-intro__text h1 {
-    font-size: 2.3rem;
   }
 
   .hero-intro__accent--left,
@@ -229,7 +209,6 @@
   .hero-intro__social {
     right: 20px;
     top: 112px;
-
     gap: 14px;
   }
 }
@@ -244,10 +223,6 @@
     padding-bottom: 28px;
   }
 
-  /*
-   Desktop decorative lines are intentionally removed.
-   They would cross the content on mobile.
-  */
   .hero-intro__accent,
   .hero-intro__accent-vert {
     display: none;
@@ -257,15 +232,8 @@
     width: 100%;
   }
 
-  .hero-intro__text h1 {
-    font-size: 1.9rem;
-    margin-bottom: 12px;
-  }
-
   .hero-intro__text p {
     max-width: 600px;
-
-    font-size: 0.9rem;
   }
 
   .hero-intro__social {
@@ -287,14 +255,6 @@
   .hero-intro {
     padding-top: 28px;
     padding-bottom: 24px;
-  }
-
-  .hero-intro__text h1 {
-    font-size: 1.9rem;
-  }
-
-  .hero-intro__text p {
-    font-size: 0.9rem;
   }
 
   .hero-intro__social {
