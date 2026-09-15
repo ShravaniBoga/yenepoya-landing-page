@@ -1,0 +1,287 @@
+.inquire-mission {
+  padding: 90px 0 60px;
+}
+
+.inquire-mission__panel {
+  display: flex;
+  min-height: 340px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* Left content panel */
+.inquire-mission__left {
+  flex: 1;
+  min-width: 0;
+  background-color: var(--color-blue-panel);
+  background-size: cover;
+  background-position: bottom right;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+
+.inquire-mission__left h3 {
+  font-size: 1.7rem;
+  margin: 0;
+}
+
+.inquire-mission__left p {
+  max-width: 420px;
+  font-size: 0.92rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.inquire-mission__left .btn-outline {
+  width: fit-content;
+}
+
+/* Mission list */
+.inquire-mission__list {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.inquire-mission__list li {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 40px;
+  border-bottom: 1px solid var(--color-border);
+  border-left: 4px solid transparent;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.inquire-mission__list li:last-child {
+  border-bottom: none;
+}
+
+.inquire-mission__list li.is-active {
+  border-left-color: var(--color-accent);
+}
+
+.inquire-mission__list h4 {
+  font-size: 1.2rem;
+  margin: 0 0 4px;
+}
+
+.inquire-mission__list p {
+  font-size: 0.85rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.inquire-mission__list li > div {
+  min-width: 0;
+}
+
+.inquire-mission__list li > img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* --------------------------------
+   Tablet
+--------------------------------- */
+@media (max-width: 1024px) {
+  .inquire-mission {
+    padding: 75px 0 55px;
+  }
+
+  .inquire-mission__panel {
+    min-height: 340px;
+  }
+
+  .inquire-mission__left {
+    padding: 40px;
+  }
+
+  .inquire-mission__left h3 {
+    font-size: 1.5rem;
+  }
+
+  .inquire-mission__left p {
+    font-size: 0.9rem;
+  }
+
+  .inquire-mission__list li {
+    padding: 18px 28px;
+  }
+
+  .inquire-mission__list h4 {
+    font-size: 1.1rem;
+  }
+}
+
+/* --------------------------------
+   Small tablet
+--------------------------------- */
+@media (max-width: 768px) {
+  .inquire-mission {
+    padding: 65px 0 50px;
+  }
+
+  .inquire-mission__panel {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .inquire-mission__left {
+    flex: none;
+    min-height: 320px;
+    padding: 40px;
+    background-position: bottom right;
+  }
+
+  .inquire-mission__left p {
+    max-width: 600px;
+  }
+
+  .inquire-mission__list {
+    flex: none;
+  }
+
+  .inquire-mission__list li {
+    min-height: 85px;
+    padding: 20px 28px;
+  }
+
+  .inquire-mission__list li:last-child {
+    border-bottom: none;
+  }
+}
+
+/* --------------------------------
+   Mobile
+--------------------------------- */
+@media (max-width: 600px) {
+  .inquire-mission {
+    padding: 55px 0 45px;
+  }
+
+  .inquire-mission__left {
+    min-height: 300px;
+    padding: 30px 24px;
+    gap: 15px;
+  }
+
+  .inquire-mission__left h3 {
+    font-size: 1.4rem;
+  }
+
+  .inquire-mission__left p {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .inquire-mission__list li {
+    min-height: 80px;
+    padding: 18px 20px;
+    gap: 12px;
+  }
+
+  .inquire-mission__list h4 {
+    font-size: 1.05rem;
+  }
+
+  .inquire-mission__list p {
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .inquire-mission__list li > img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* --------------------------------
+   Small mobile
+--------------------------------- */
+@media (max-width: 375px) {
+  .inquire-mission {
+    padding: 50px 0 40px;
+  }
+
+  .inquire-mission__left {
+    min-height: 285px;
+    padding: 26px 18px;
+  }
+
+  .inquire-mission__left h3 {
+    font-size: 1.3rem;
+  }
+
+  .inquire-mission__left p {
+    font-size: 0.84rem;
+  }
+
+  .inquire-mission__list li {
+    min-height: 76px;
+    padding: 16px;
+  }
+
+  .inquire-mission__list h4 {
+    font-size: 1rem;
+  }
+
+  .inquire-mission__list p {
+    font-size: 0.78rem;
+  }
+
+  .inquire-mission__list li > img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* --------------------------------
+   Extra-small mobile
+--------------------------------- */
+@media (max-width: 320px) {
+  .inquire-mission__left {
+    min-height: 270px;
+    padding: 22px 15px;
+  }
+
+  .inquire-mission__left h3 {
+    font-size: 1.2rem;
+  }
+
+  .inquire-mission__left p {
+    font-size: 0.8rem;
+  }
+
+  .inquire-mission__list li {
+    padding: 14px;
+    gap: 8px;
+  }
+
+  .inquire-mission__list h4 {
+    font-size: 0.95rem;
+  }
+
+  .inquire-mission__list p {
+    font-size: 0.75rem;
+  }
+
+  .inquire-mission__list li > img {
+    width: 26px;
+    height: 26px;
+  }
+}

@@ -1,0 +1,85 @@
+.stats {
+  padding: 70px 0 40px;
+}
+
+.stats__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.stats__left h2 {
+  font-size: 2.1rem;
+  margin-bottom: 8px;
+}
+
+.stats__left > p {
+  font-size: 0.95rem;
+  margin-bottom: 28px;
+}
+
+.stats__grid {
+  position: relative;
+  display: flex;
+  border: 1px solid var(--color-text-dark);
+  padding: 26px 34px;
+  gap: 40px;
+}
+
+.stats__item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stats__value {
+  font-family: var(--font-heading);
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--color-blue-light);
+}
+
+.stats__label {
+  font-size: 0.85rem;
+  color: var(--color-text-body);
+  white-space: nowrap;
+}
+
+.stats__right {
+  text-align: right;
+  max-width: 320px;
+  padding-top: 8px;
+}
+
+.stats__clouds {
+  display: block; /* NEW */
+  margin-left: auto; /* NEW */
+  margin-bottom: 150px;
+}
+
+.stats__quote {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--color-text-dark);
+}
+/* NEW — this whole block didn't exist before */
+.stats__connector {
+  position: absolute;
+  left: 100%; /* starts exactly at the box's right border, whatever its width */
+  top: 40px;
+  width: 140px;
+  height: 1px;
+  background: var(--color-line);
+}
+.stats__connector::after {
+  /* NEW — the downward turn of the line */
+  content: "";
+  position: absolute;
+  left: 140px; /* picks up where the horizontal segment ends */
+  top: 0;
+  width: 1px;
+  height: 175px;
+  background: var(--color-line);
+}

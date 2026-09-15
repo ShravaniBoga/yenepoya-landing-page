@@ -1,0 +1,125 @@
+/* ---------------------------------------------------
+   Global design tokens
+   Change colors / fonts / spacing here and it ripples
+   through every component's CSS file.
+--------------------------------------------------- */
+:root {
+  --color-bg: #ffffff;
+  --color-blue-light: #cdeaf5;
+  --color-blue-soft: #e6f6fa;
+  --color-blue-panel: #c3e9ef;
+  --color-text-dark: #383d42;
+  --color-text-body: #767d82;
+  --color-text-on-blue: #ffffff;
+  --color-accent: #7a5570;
+  --color-border: #e4e4e4;
+  --color-white: #ffffff;
+  --color-line: #8a8a8a; /* NEW — gray used by both accent lines */
+  --color-line-soft: #f3dce9;
+
+  --font-heading: "Baloo 2", "Segoe UI", sans-serif;
+  --font-body: "Poppins", "Segoe UI", sans-serif;
+
+  --container-width: 1200px;
+  --section-padding: 90px;
+
+  --radius-sm: 4px;
+  --radius-md: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-body);
+  background: var(--color-bg);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  color: var(--color-text-dark);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
+/* Reusable section heading, used by several sections */
+.section-eyebrow {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-eyebrow h2 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.section-eyebrow p {
+  font-size: 0.95rem;
+}
+
+/* Reusable outline button style, reused across sections */
+.btn-outline {
+  display: inline-block;
+  border: 1.5px solid var(--color-text-dark);
+  background: var(--color-white);
+  color: var(--color-text-dark);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 14px 30px;
+  border-radius: var(--radius-sm);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: var(--color-text-dark);
+  color: var(--color-white);
+}

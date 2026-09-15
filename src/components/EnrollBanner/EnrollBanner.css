@@ -1,0 +1,185 @@
+.enroll {
+  width: 100%;
+  overflow: hidden;
+}
+
+.enroll__banner {
+  width: 100%;
+  min-height: 242px;
+
+  display: flex;
+  align-items: center;
+
+  background-image: var(--enroll-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.enroll__content {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 34px;
+  padding: 30px 20px;
+}
+
+.enroll__content h2 {
+  margin: 0;
+
+  color: #80858a;
+  font-size: clamp(1.5rem, 2vw, 1.9rem);
+  font-weight: 600;
+  line-height: 1.25;
+
+  white-space: nowrap;
+}
+
+.enroll__content .btn-outline {
+  min-width: 134px;
+  min-height: 44px;
+
+  padding: 10px 22px;
+
+  background: #ffffff;
+  color: #111111;
+
+  border: none;
+  border-radius: 2px;
+
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+  .enroll__banner {
+    min-height: 220px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .enroll__content {
+    gap: 24px;
+    padding: 30px;
+  }
+
+  .enroll__content h2 {
+    font-size: 1.45rem;
+  }
+}
+
+/* =========================
+   SMALL TABLET
+========================= */
+
+@media (max-width: 768px) {
+  .enroll__banner {
+    min-height: 210px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .enroll__content {
+    gap: 18px;
+    padding: 25px 20px;
+  }
+
+  .enroll__content h2 {
+    font-size: 1.25rem;
+    white-space: normal;
+  }
+
+  .enroll__content .btn-outline {
+    min-width: 110px;
+    min-height: 40px;
+    padding: 8px 18px;
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 576px) {
+  .enroll__banner {
+    min-height: 200px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .enroll__content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 14px;
+    padding: 25px 20px;
+  }
+
+  .enroll__content h2 {
+    max-width: 280px;
+
+    font-size: 1.2rem;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  .enroll__content .btn-outline {
+    min-width: 105px;
+    min-height: 38px;
+
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 375px) {
+  .enroll__banner {
+    min-height: 190px;
+  }
+
+  .enroll__content {
+    padding: 20px 16px;
+  }
+
+  .enroll__content h2 {
+    max-width: 240px;
+    font-size: 1.1rem;
+  }
+}
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 320px) {
+  .enroll__banner {
+    min-height: 180px;
+  }
+
+  .enroll__content {
+    padding: 18px 12px;
+  }
+
+  .enroll__content h2 {
+    max-width: 220px;
+    font-size: 1rem;
+  }
+
+  .enroll__content .btn-outline {
+    min-width: 95px;
+    font-size: 0.8rem;
+  }
+}

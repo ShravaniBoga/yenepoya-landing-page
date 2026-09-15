@@ -1,0 +1,137 @@
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  padding-bottom: 90px;
+}
+
+.quick-links__item {
+  min-width: 0;
+  background: var(--color-blue-panel);
+  color: var(--color-white);
+  padding: 30px 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  gap: 20px;
+  transition: background 0.2s ease;
+}
+
+.quick-links__item:hover {
+  background: var(--color-accent);
+}
+
+.quick-links__item span {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .quick-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    padding-bottom: 70px;
+  }
+
+  .quick-links__item {
+    padding: 28px 24px;
+  }
+
+  .quick-links__item span {
+    font-size: 1.25rem;
+  }
+}
+
+/* Small tablet */
+@media (max-width: 768px) {
+  .quick-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    padding-bottom: 60px;
+  }
+
+  .quick-links__item {
+    min-height: 110px;
+    padding: 24px 20px;
+    gap: 14px;
+  }
+
+  .quick-links__item span {
+    font-size: 1.1rem;
+  }
+
+  .quick-links__item svg {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .quick-links {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding-bottom: 50px;
+  }
+
+  .quick-links__item {
+    width: 100%;
+    min-height: 90px;
+    padding: 22px 20px;
+    justify-content: center;
+  }
+
+  .quick-links__item span {
+    font-size: 1.15rem;
+  }
+
+  .quick-links__item svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 375px) {
+  .quick-links {
+    gap: 12px;
+    padding-bottom: 45px;
+  }
+
+  .quick-links__item {
+    min-height: 85px;
+    padding: 20px 16px;
+    gap: 12px;
+  }
+
+  .quick-links__item span {
+    font-size: 1rem;
+  }
+
+  .quick-links__item svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Extra-small mobile */
+@media (max-width: 320px) {
+  .quick-links__item {
+    min-height: 80px;
+    padding: 18px 14px;
+  }
+
+  .quick-links__item span {
+    font-size: 0.9rem;
+  }
+
+  .quick-links__item svg {
+    width: 26px;
+    height: 26px;
+  }
+}
