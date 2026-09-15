@@ -90,7 +90,7 @@ ul {
 /* Reusable section heading, used by several sections */
 .section-eyebrow {
   text-align: center;
-  margin-bottom: 50px;
+  margin: 50px;
 }
 
 .section-eyebrow h2 {

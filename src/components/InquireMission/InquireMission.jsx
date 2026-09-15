@@ -29,7 +29,7 @@ function InquireMission() {
     <section className="inquire-mission">
       <div className="section-eyebrow">
         <h2>Inquire Today</h2>
-        <p>Contact Us for More Information</p>
+        <p></p>
       </div>
 
       <div className="container inquire-mission__panel">

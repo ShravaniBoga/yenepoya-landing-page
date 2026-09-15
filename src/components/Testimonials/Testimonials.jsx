@@ -1,5 +1,6 @@
 import strip from "../../assets/images/testimonial-strip.jpg";
 import chat from "../../assets/images/chat.png";
+
 import "./Testimonials.css";
 
 function Testimonials() {
@@ -15,11 +16,10 @@ function Testimonials() {
 
       <div className="testimonials__heading">
         <div className="testimonials__heading-icon" aria-hidden="true">
-          <img src={chat} alt="Chat_icon" />
+          <img src={chat} alt="Chat icon" />
         </div>
 
         <h2>Testimonials</h2>
-
         <p>Contact Us for More Information</p>
       </div>
 

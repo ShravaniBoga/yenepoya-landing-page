@@ -14,21 +14,17 @@
   position: absolute;
   top: 0;
   right: 0;
-
   width: 60%;
   height: 100%;
-
   z-index: 1;
 }
 
 .testimonials__image {
   display: block;
-
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
 }
 
 /* =========================================================
@@ -39,20 +35,14 @@
   position: absolute;
   top: 0;
   left: 0;
-
   width: 40%;
   height: 52.2%;
-
   z-index: 3;
 
   padding: 135px 50px 30px;
 
   background-color: var(--color-white);
 
-  /*
-    Very subtle square/grid pattern
-    matching the screenshot.
-  */
   background-image:
     linear-gradient(rgba(226, 235, 240, 0.42) 1px, transparent 1px),
     linear-gradient(90deg, rgba(226, 235, 240, 0.42) 1px, transparent 1px);
@@ -63,17 +53,14 @@
 .testimonials__heading-icon {
   width: 64px;
   height: 48px;
-
   margin-bottom: 8px;
-
-  color: #d9dfe2;
 }
 
-.testimonials__heading-icon svg {
+.testimonials__heading-icon img {
   display: block;
-
   width: 100%;
   height: 100%;
+  object-fit: contain;
 }
 
 .testimonials__heading h2 {
@@ -105,7 +92,6 @@
 
 .testimonials__quote {
   position: absolute;
-
   left: 0;
   bottom: 0;
 
@@ -121,13 +107,16 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
+  box-sizing: border-box;
 }
 
-/* Large quotation mark */
+/* =========================================================
+   QUOTATION MARK
+   ========================================================= */
 
 .testimonials__mark {
   position: absolute;
-
   top: 68px;
   left: 47px;
 
@@ -139,11 +128,12 @@
   color: var(--color-white);
 }
 
-/* Author */
+/* =========================================================
+   AUTHOR
+   ========================================================= */
 
 .testimonials__author {
   margin: 0 0 57px;
-
   padding-right: 0;
 
   text-align: right;
@@ -156,7 +146,9 @@
   color: var(--color-text-dark);
 }
 
-/* Main testimonial */
+/* =========================================================
+   TESTIMONIAL TEXT
+   ========================================================= */
 
 .testimonials__text {
   max-width: 735px;
@@ -188,6 +180,7 @@
 
   .testimonials__quote {
     padding-left: max(50px, calc((100vw - 1366px) / 2 + 50px));
+
     padding-right: 50px;
   }
 }
@@ -196,7 +189,7 @@
    DESKTOP
    ========================================================= */
 
-@media (max-width: 1200px) {
+@media (max-width: 1200px) and (min-width: 1025px) {
   .testimonials__heading {
     padding-left: 40px;
     padding-right: 35px;
@@ -221,10 +214,10 @@
 }
 
 /* =========================================================
-   TABLET
+   TABLET — 769px to 1024px
    ========================================================= */
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (min-width: 769px) {
   .testimonials {
     height: 560px;
   }
@@ -235,10 +228,11 @@
 
   .testimonials__heading {
     width: 44%;
-
     height: 50%;
 
     padding: 105px 30px 25px;
+
+    box-sizing: border-box;
   }
 
   .testimonials__heading-icon {
@@ -264,13 +258,11 @@
   .testimonials__mark {
     top: 55px;
     left: 29px;
-
     font-size: 4.5rem;
   }
 
   .testimonials__author {
     margin-bottom: 38px;
-
     font-size: 0.82rem;
   }
 
@@ -281,33 +273,36 @@
 }
 
 /* =========================================================
-   SMALL TABLET
+   MOBILE / SMALL TABLET
+   768px AND BELOW
    ========================================================= */
 
 @media (max-width: 768px) {
   .testimonials {
+    width: 100%;
     height: auto;
     overflow: visible;
 
-    padding: 0;
+    display: flex;
+    flex-direction: column;
   }
 
-  /*
-    Mobile/tablet composition:
-    heading first,
-    image second,
-    quote overlaps the bottom of image.
-  */
+  /* -------------------------
+     HEADING
+     ------------------------- */
 
   .testimonials__heading {
     position: relative;
 
+    order: 1;
+
     width: 100%;
     height: auto;
-
     min-height: 220px;
 
     padding: 60px 30px 35px;
+
+    box-sizing: border-box;
 
     background-size: 60px 60px;
   }
@@ -315,7 +310,6 @@
   .testimonials__heading-icon {
     width: 55px;
     height: 42px;
-
     margin-bottom: 5px;
   }
 
@@ -327,13 +321,22 @@
     font-size: 0.85rem;
   }
 
+  /* -------------------------
+     IMAGE
+     ------------------------- */
+
   .testimonials__visual {
     position: relative;
+
+    order: 2;
+
     top: auto;
     right: auto;
 
     width: 100%;
     height: 390px;
+
+    flex-shrink: 0;
   }
 
   .testimonials__image {
@@ -341,22 +344,30 @@
     height: 100%;
 
     object-fit: cover;
+    object-position: center center;
   }
+
+  /* -------------------------
+     QUOTE CARD
+     ------------------------- */
 
   .testimonials__quote {
     position: relative;
+
+    order: 3;
 
     left: auto;
     bottom: auto;
 
     width: calc(100% - 40px);
     height: auto;
-
     min-height: 270px;
 
     margin: -65px auto 0;
 
     padding: 70px 30px 35px;
+
+    box-sizing: border-box;
   }
 
   .testimonials__mark {
@@ -377,13 +388,12 @@
 }
 
 /* =========================================================
-   MOBILE
+   MOBILE — 600px AND BELOW
    ========================================================= */
 
 @media (max-width: 600px) {
   .testimonials__heading {
     min-height: 205px;
-
     padding: 50px 24px 30px;
   }
 
@@ -404,6 +414,10 @@
     height: 310px;
   }
 
+  .testimonials__image {
+    object-position: center center;
+  }
+
   .testimonials__quote {
     width: calc(100% - 28px);
 
@@ -415,13 +429,11 @@
   .testimonials__mark {
     top: 47px;
     left: 21px;
-
     font-size: 4rem;
   }
 
   .testimonials__author {
     margin-bottom: 28px;
-
     font-size: 0.8rem;
   }
 
@@ -432,13 +444,12 @@
 }
 
 /* =========================================================
-   SMALL MOBILE
+   SMALL MOBILE — 480px AND BELOW
    ========================================================= */
 
 @media (max-width: 480px) {
   .testimonials__heading {
     min-height: 190px;
-
     padding: 45px 20px 28px;
   }
 
@@ -465,7 +476,6 @@
   .testimonials__mark {
     top: 42px;
     left: 18px;
-
     font-size: 3.7rem;
   }
 
@@ -479,13 +489,12 @@
 }
 
 /* =========================================================
-   375px
+   375px AND BELOW
    ========================================================= */
 
 @media (max-width: 375px) {
   .testimonials__heading {
     min-height: 180px;
-
     padding: 42px 18px 25px;
   }
 
@@ -508,7 +517,6 @@
   .testimonials__mark {
     top: 39px;
     left: 16px;
-
     font-size: 3.4rem;
   }
 
@@ -523,13 +531,12 @@
 }
 
 /* =========================================================
-   320px
+   320px AND BELOW
    ========================================================= */
 
 @media (max-width: 320px) {
   .testimonials__heading {
     min-height: 170px;
-
     padding: 38px 16px 22px;
   }
 
@@ -556,13 +563,11 @@
   .testimonials__mark {
     top: 36px;
     left: 14px;
-
     font-size: 3.2rem;
   }
 
   .testimonials__author {
     margin-bottom: 22px;
-
     font-size: 0.72rem;
   }
 
